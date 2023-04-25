@@ -5,7 +5,7 @@ const num = 5;
 
 //* fist solution
 // function activityNotifications(expenditure, d) {
-    // Write your code here
+// Write your code here
 // let counter = 0;
 // let notif = 0;
 // for (let i = 0; i < expenditure.length - d; i++) {
@@ -32,69 +32,67 @@ const num = 5;
 // }
 // activityNotifications(data,num)
 
-
 //* second solution
 function activityNotifications(expenditure, d) {
-    // Define the counting array with a length of 201 (the maximum possible value of expenditure)
-    const countArr = Array(201).fill(0);
-    
-    // Define the variables we'll need for the algorithm
-    let notificationCount = 0;
-    let countIndex = 0;
-  
-    // Initialize the counting array with the first d values of expenditure
-    for (let i = 0; i < d; i++) {
-      countArr[expenditure[i]]++;
-    }
-  
-    for (let i = d; i < expenditure.length; i++) {
-      // Get the median value
-      let median = 0;
-      if (d % 2 === 0) {
-        let first = 0;
-        let second = 0;
-        let count = 0;
-  
-        for (let j = 0; j < countArr.length; j++) {
-          count += countArr[j];
-          if (count > d / 2) {
-            second = j;
-            break;
-          }
-          if (count === d / 2 && first === 0) {
-            first = j;
-          }
-          if (count >= d / 2 + 1) {
-            second = j;
-            break;
-          }
-        }
-  
-        median = (first + second) / 2;
-      } else {
-        let count = 0;
-        for (let j = 0; j < countArr.length; j++) {
-          count += countArr[j];
-          if (count > Math.floor(d / 2)) {
-            median = j;
-            break;
-          }
-        }
-      }
-  
-      // Check for notification
-      if (expenditure[i] >= median * 2) {
-        notificationCount++;
-      }
-  
-      // Update the count array
-      countArr[expenditure[countIndex]]--;
-      countArr[expenditure[i]]++;
-  
-      // Update count index
-      countIndex++;
-    }
-  
-    return notificationCount ;
+  // Define the counting array with a length of 201 (the maximum possible value of expenditure)
+  const countArr = Array(201).fill(0);
+
+  let notificationCount = 0;
+  let countIndex = 0;
+
+  // Initialize the counting array with the first d values of expenditure
+  for (let i = 0; i < d; i++) {
+    countArr[expenditure[i]]++;
   }
-  activityNotifications(data,num)
+
+  for (let i = d; i < expenditure.length; i++) {
+    // Get the median value
+    let median = 0;
+    if (d % 2 === 0) {
+      let first = 0;
+      let second = 0;
+      let count = 0;
+
+      for (let j = 0; j < countArr.length; j++) {
+        count += countArr[j];
+        if (count > d / 2) {
+          second = j;
+          break;
+        }
+        if (count === d / 2 && first === 0) {
+          first = j;
+        }
+        if (count >= d / 2 + 1) {
+          second = j;
+          break;
+        }
+      }
+
+      median = (first + second) / 2;
+    } else {
+      let count = 0;
+      for (let j = 0; j < countArr.length; j++) {
+        count += countArr[j];
+        if (count > Math.floor(d / 2)) {
+          median = j;
+          break;
+        }
+      }
+    }
+
+    // Check for notification
+    if (expenditure[i] >= median * 2) {
+      notificationCount++;
+    }
+
+    // Update the count array
+    countArr[expenditure[countIndex]]--;
+    countArr[expenditure[i]]++;
+
+    // Update count index
+    countIndex++;
+  }
+
+  return notificationCount;
+}
+activityNotifications(data, num);
