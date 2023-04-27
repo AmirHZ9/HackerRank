@@ -16,9 +16,9 @@ return "NO"
 
 
 // second solution
-const filtered = s1.filter(i => s2.indexOf(i) > -1)
-if(filtered.length >0) {
-    return "yes"
-}else{
-    return "No"
-}
+// const filtered = s1.filter(i => s2.indexOf(i) > -1)
+// if(filtered.length >0) {
+//     return "yes"
+// }else{
+//     return "No"
+// }
