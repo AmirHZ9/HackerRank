@@ -1,3 +1,5 @@
+// challeng's link:
+// https://www.hackerrank.com/challenges/count-triplets-1/problem?isFullScreen=true&h_l=interview&playlist_slugs%5B%5D=interview-preparation-kit&playlist_slugs%5B%5D=dictionaries-hashmaps
 const arr = [1, 5, 5, 25, 125];
 const r = 5;
 let counter = 0;
