@@ -1,3 +1,6 @@
+// challeng's link:
+// https://www.hackerrank.com/challenges/ctci-making-anagrams/problem?isFullScreen=true&h_l=interview&playlist_slugs%5B%5D=interview-preparation-kit&playlist_slugs%5B%5D=strings
+
 const a = "cdec";
 const b = "dcf";
 let count = 0
