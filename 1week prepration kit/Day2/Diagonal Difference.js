@@ -12,5 +12,4 @@ for (let i = 0; i < arr.length; i++) {
     left += arr[i][arr.length-i-1]
 }
 
-console.log(right)
-console.log(left)
+console.log(Math.abs(right - left))
